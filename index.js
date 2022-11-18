@@ -16,10 +16,10 @@ The function should:
 */
 
 
-function createMenuItem(/*Your code here*/){
-  /*Your code here*/
+function createMenuItem(name, price, category){
+  return {name, price, category};
 }
-
+console.log(createMenuItem("Tacos", 8, "Lunch"));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b (not auto-tested): 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -31,6 +31,9 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
+console.log(createMenuItem("Pizza", 5, "Lunch"));
+console.log(createMenuItem("Steak", 10, "Dinner"));
+console.log(createMenuItem("Side Salad", 3, "Snack"));
 
 
 
@@ -51,9 +54,17 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
+  discount: function(person){
+    if(person === "teacher" || person === "student"){
+      return this.price-(this.price*0.25);
+    } else if(person === "public"){
+      return this.price-(this.price*0.10);
+    } else {
+      return "Please define who the discount is for!"
+    }
+  } 
 }
-
+console.log(burger.discount());
 
 
 ///////////////Reviews (MVP)///////////////////
